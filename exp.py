@@ -208,9 +208,10 @@ for fold_, (trn_idx, val_idx) in enumerate(folds_stack.split(train_stack,target)
     oof_stack[val_idx] = clf_3.predict(val_data)
     predictions += clf_3.predict(test_stack) / 10
     
-mean_squared_error(target.values, oof_stack)
-
+print(mean_squared_error(target.values, oof_stack))
+# print(oof_stack)
+# print(target.values)
 sub_df = pd.read_csv('./data/jinnan_round1_submit_20181227.csv', header=None)
-sub_df[1] = predictions
+sub_df[1] = oof_stack
 sub_df[1] = sub_df[1].apply(lambda x:(round(x, 3)))
-sub_df.to_csv("./data/sub_jinnan.csv", index=False, header=None)
+sub_df.to_csv("./data/t1.csv", index=False, header=None)

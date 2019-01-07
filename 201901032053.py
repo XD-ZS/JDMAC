@@ -26,8 +26,8 @@ warnings.simplefilter(action='ignore', category=FutureWarning)
 warnings.filterwarnings("ignore")
 pd.set_option('display.max_columns', None)
 pd.set_option('max_colwidth', 100)
-train = pd.read_csv('../input/jinnan_round1_train_20181227.csv', encoding='gb18030')
-test = pd.read_csv('../input/jinnan_round1_testA_20181227.csv', encoding='gb18030')
+train = pd.read_csv('./data/jinnan_round1_train_20181227.csv', encoding='gb18030')
+test = pd.read_csv('./data/jinnan_round1_testA_20181227.csv', encoding='gb18030')
 # 删除类别唯一的特征
 for df in [train, test]:
     df.drop(['B3', 'B13', 'A13', 'A18', 'A23'], axis=1, inplace=True)
@@ -197,8 +197,12 @@ for fold_, (trn_idx, val_idx) in enumerate(folds_stack.split(train_stack, target
     oof_stack[val_idx] = clf_3.predict(val_data)
     predictions += clf_3.predict(test_stack) / 10
 
-mean_squared_error(target.values, oof_stack)
-sub_df = pd.read_csv('../input/jinnan_round1_submit_20181227.csv', header=None)
+m1 = mean_squared_error(target.values, oof_stack)
+print (m1)
+import time
+time_name = time.strftime('%Y%m%d%H%M',time.localtime(time.time()))
+
+sub_df = pd.read_csv('./data/jinnan_round1_submit_20181227.csv', header=None)
 sub_df[1] = predictions
 sub_df[1] = sub_df[1].apply(lambda x: round(x, 3))
-sub_df.to_csv("../input/sub_jinnan.csv", index=False, header=None)
+sub_df.to_csv("./data/" + time_name + ".csv", index=False, header=None)
