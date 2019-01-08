@@ -117,7 +117,7 @@ for f1 in cate_columns:
         mean_features.append(col_name)
         order_label = train.groupby([f1])[f2].mean()
         for df in [train, test]:
-            df[col_name] = df[f1].map(order_label)
+            df[col_name] = df[f].map(order_label)
 
 train.drop(li, axis=1, inplace=True)
 train.drop(['样本id', 'target'], axis=1, inplace=True)
