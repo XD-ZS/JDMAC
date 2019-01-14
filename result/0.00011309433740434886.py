@@ -279,4 +279,4 @@ print(ml)
 sub_df = pd.read_csv('../data/jinnan_round1_submit_20181227.csv', header=None)
 sub_df[1] = predictions
 sub_df[1] = sub_df[1].apply(lambda x:round(x, 3))
-sub_df.to_csv("../data/test/" + str(m1) + ".csv", index=False, header=None)
+sub_df.to_csv("../data/test/" + str(ml) + ".csv", index=False, header=None)
