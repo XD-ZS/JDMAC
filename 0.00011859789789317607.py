@@ -189,17 +189,71 @@ for f1 in categorical_columns:
             else:
                 test[col_name] = test['B14'].map(order_label)
 
-best_features=['样本id', 'A2', 'A5', 'A6', 'A7', 'A9', 'A10', 'A11', 'A12', 'A14', 'A15', 'A16', 'A17', 'A19', 'A20', 'A21', 'A22', 'A26', 'A27', 'A28', 'B1', 'B4', 'B5', 'B6', 'B8', 'B10', 'B11', 'B12', 'B14', 'A2_3_4', 'A1_2_3_4', '0', '1', '2', '3', '4', '5', '6', 'b14/a1_a3_a4_a19_b1_b12', 'B14_to_A5_intTarget_0.0_mean', 'B14_to_A5_intTarget_1.0_mean', 'B14_to_A5_intTarget_2.0_mean', 'B14_to_A5_intTarget_3.0_mean', 'B14_to_A5_intTarget_4.0_mean', 'B14_to_A6_intTarget_0.0_mean', 'B14_to_A6_intTarget_1.0_mean', 'B14_to_A6_intTarget_2.0_mean', 'B14_to_A6_intTarget_3.0_mean', 'B14_to_A6_intTarget_4.0_mean', 'B14_to_A7_intTarget_0.0_mean', 'B14_to_A7_intTarget_1.0_mean', 'B14_to_A7_intTarget_2.0_mean', 'B14_to_A7_intTarget_3.0_mean', 'B14_to_A7_intTarget_4.0_mean', 'B14_to_A9_intTarget_0.0_mean', 'B14_to_A9_intTarget_1.0_mean', 'B14_to_A9_intTarget_2.0_mean', 'B14_to_A9_intTarget_3.0_mean', 'B14_to_A9_intTarget_4.0_mean', 'B14_to_A11_intTarget_0.0_mean', 'B14_to_A11_intTarget_1.0_mean', 'B14_to_A11_intTarget_2.0_mean', 'B14_to_A11_intTarget_3.0_mean', 'B14_to_A11_intTarget_4.0_mean', 'B14_to_A14_intTarget_0.0_mean', 'B14_to_A14_intTarget_1.0_mean', 'B14_to_A14_intTarget_2.0_mean', 'B14_to_A14_intTarget_3.0_mean', 'B14_to_A14_intTarget_4.0_mean', 'B14_to_A16_intTarget_0.0_mean', 'B14_to_A16_intTarget_1.0_mean', 'B14_to_A16_intTarget_2.0_mean', 'B14_to_A16_intTarget_3.0_mean', 'B14_to_A16_intTarget_4.0_mean', 'B14_to_A24_intTarget_0.0_mean', 'B14_to_A24_intTarget_1.0_mean', 'B14_to_A24_intTarget_2.0_mean', 'B14_to_A24_intTarget_3.0_mean', 'B14_to_A24_intTarget_4.0_mean', 'B14_to_A26_intTarget_0.0_mean', 'B14_to_A26_intTarget_1.0_mean', 'B14_to_A26_intTarget_2.0_mean', 'B14_to_A26_intTarget_3.0_mean', 'B14_to_A26_intTarget_4.0_mean', 'B14_to_B1_intTarget_0.0_mean', 'B14_to_B1_intTarget_1.0_mean', 'B14_to_B1_intTarget_2.0_mean', 'B14_to_B1_intTarget_3.0_mean', 'B14_to_B1_intTarget_4.0_mean', 'B14_to_B5_intTarget_0.0_mean', 'B14_to_B5_intTarget_1.0_mean', 'B14_to_B5_intTarget_2.0_mean', 'B14_to_B5_intTarget_3.0_mean', 'B14_to_B5_intTarget_4.0_mean', 'B14_to_B6_intTarget_0.0_mean', 'B14_to_B6_intTarget_1.0_mean', 'B14_to_B6_intTarget_2.0_mean', 'B14_to_B6_intTarget_3.0_mean', 'B14_to_B6_intTarget_4.0_mean', 'B14_to_B7_intTarget_0.0_mean', 'B14_to_B7_intTarget_1.0_mean', 'B14_to_B7_intTarget_2.0_mean', 'B14_to_B7_intTarget_3.0_mean', 'B14_to_B7_intTarget_4.0_mean', 'B14_to_B8_intTarget_0.0_mean', 'B14_to_B8_intTarget_1.0_mean', 'B14_to_B8_intTarget_2.0_mean', 'B14_to_B8_intTarget_3.0_mean', 'B14_to_B8_intTarget_4.0_mean', 'B14_to_B14_intTarget_0.0_mean', 'B14_to_B14_intTarget_1.0_mean', 'B14_to_B14_intTarget_2.0_mean', 'B14_to_B14_intTarget_3.0_mean', 'B14_to_B14_intTarget_4.0_mean', 'B14_to_3_intTarget_0.0_mean', 'B14_to_3_intTarget_1.0_mean', 'B14_to_3_intTarget_2.0_mean', 'B14_to_3_intTarget_3.0_mean', 'B14_to_3_intTarget_4.0_mean', 'B14_to_4_intTarget_0.0_mean', 'B14_to_4_intTarget_1.0_mean', 'B14_to_4_intTarget_2.0_mean', 'B14_to_4_intTarget_3.0_mean', 'B14_to_4_intTarget_4.0_mean', 'B14_to_5_intTarget_0.0_mean', 'B14_to_5_intTarget_1.0_mean', 'B14_to_5_intTarget_2.0_mean', 'B14_to_5_intTarget_3.0_mean', 'B14_to_5_intTarget_4.0_mean', 'B14_to_6_intTarget_0.0_mean', 'B14_to_6_intTarget_1.0_mean', 'B14_to_6_intTarget_2.0_mean', 'B14_to_6_intTarget_3.0_mean', 'B14_to_6_intTarget_4.0_mean']
-print(train.columns)
-print(test.columns)
-# train=train[best_features]
-# test=test[best_features]
-
-# train.drop(li + ['target'], axis=1, inplace=True)
+train.drop(li + ['target'], axis=1, inplace=True)
 print(train.shape)
 print(test.shape)
-# X_train = train[mean_columns + numerical_columns].values
-# X_test = test[mean_columns + numerical_columns].values
+X_train = train[mean_columns + numerical_columns].values
+X_test = test[mean_columns + numerical_columns].values
+# one hot
+enc = OneHotEncoder()
+for f in categorical_columns:
+    enc.fit(data[f].values.reshape(-1, 1))
+    X_train = sparse.hstack((X_train, enc.transform(train[f].values.reshape(-1, 1))), 'csr')
+    X_test = sparse.hstack((X_test, enc.transform(test[f].values.reshape(-1, 1))), 'csr')
+y_train = target.values
+def modeling_cross_validation(params, X, y, nr_folds=5):
+    oof_preds = np.zeros(X.shape[0])
+    folds = KFold(n_splits=nr_folds, shuffle=False, random_state=4096)
+
+    for fold_, (trn_idx, val_idx) in enumerate(folds.split(X, y)):
+        print("fold n°{}".format(fold_ + 1))
+        trn_data = lgb.Dataset(X[trn_idx], y[trn_idx])
+        val_data = lgb.Dataset(X[val_idx], y[val_idx])
+
+        num_round = 20000
+        clf = lgb.train(params, trn_data, num_round, valid_sets=[trn_data, val_data], verbose_eval=1000,
+                        early_stopping_rounds=100)
+        oof_preds[val_idx] = clf.predict(X[val_idx], num_iteration=clf.best_iteration)
+
+    score = mean_squared_error(oof_preds, target)
+    return score / 2
+def featureSelect(init_cols):
+    params = {'num_leaves': 120,
+              'min_data_in_leaf': 30,
+              'objective': 'regression',
+              'max_depth': -1,
+              'learning_rate': 0.05,
+              "min_child_samples": 30,
+              "boosting": "gbdt",
+              "feature_fraction": 0.9,
+              "bagging_freq": 1,
+              "bagging_fraction": 0.9,
+              "bagging_seed": 11,
+              "metric": 'mse',
+              "lambda_l1": 0.02,
+              "verbosity": -1}
+    best_cols = init_cols.copy()
+    best_score = modeling_cross_validation(params, train[init_cols].values, target.values, nr_folds=5)
+    print("初始CV score: {:<8.8f}".format(best_score))
+    for f in init_cols:
+
+        best_cols.remove(f)
+        score = modeling_cross_validation(params, train[best_cols].values, target.values, nr_folds=5)
+        diff = best_score - score
+        print('-' * 10)
+        if diff > 0.0000002:
+            print("当前移除特征: {}, CV score: {:<8.8f}, 最佳cv score: {:<8.8f}, 有效果,删除！！".format(f, score, best_score))
+            best_score = score
+        else:
+            print("当前移除特征: {}, CV score: {:<8.8f}, 最佳cv score: {:<8.8f}, 没效果,保留！！".format(f, score, best_score))
+            best_cols.append(f)
+    print('-' * 10)
+    print("优化后CV score: {:<8.8f}".format(best_score))
+
+    return best_cols
+
+best_features = featureSelect(train.columns.tolist())
+# best_features=['样本id', 'A2', 'A5', 'A6', 'A7', 'A9', 'A10', 'A11', 'A12', 'A14', 'A15', 'A16', 'A17', 'A19', 'A20', 'A21', 'A22', 'A26', 'A27', 'A28', 'B1', 'B4', 'B5', 'B6', 'B8', 'B10', 'B11', 'B12', 'B14', 'A2_3_4', 'A1_2_3_4', '0', '1', '2', '3', '4', '5', '6', 'b14/a1_a3_a4_a19_b1_b12', 'B14_to_A5_intTarget_0.0_mean', 'B14_to_A5_intTarget_1.0_mean', 'B14_to_A5_intTarget_2.0_mean', 'B14_to_A5_intTarget_3.0_mean', 'B14_to_A5_intTarget_4.0_mean', 'B14_to_A6_intTarget_0.0_mean', 'B14_to_A6_intTarget_1.0_mean', 'B14_to_A6_intTarget_2.0_mean', 'B14_to_A6_intTarget_3.0_mean', 'B14_to_A6_intTarget_4.0_mean', 'B14_to_A7_intTarget_0.0_mean', 'B14_to_A7_intTarget_1.0_mean', 'B14_to_A7_intTarget_2.0_mean', 'B14_to_A7_intTarget_3.0_mean', 'B14_to_A7_intTarget_4.0_mean', 'B14_to_A9_intTarget_0.0_mean', 'B14_to_A9_intTarget_1.0_mean', 'B14_to_A9_intTarget_2.0_mean', 'B14_to_A9_intTarget_3.0_mean', 'B14_to_A9_intTarget_4.0_mean', 'B14_to_A11_intTarget_0.0_mean', 'B14_to_A11_intTarget_1.0_mean', 'B14_to_A11_intTarget_2.0_mean', 'B14_to_A11_intTarget_3.0_mean', 'B14_to_A11_intTarget_4.0_mean', 'B14_to_A14_intTarget_0.0_mean', 'B14_to_A14_intTarget_1.0_mean', 'B14_to_A14_intTarget_2.0_mean', 'B14_to_A14_intTarget_3.0_mean', 'B14_to_A14_intTarget_4.0_mean', 'B14_to_A16_intTarget_0.0_mean', 'B14_to_A16_intTarget_1.0_mean', 'B14_to_A16_intTarget_2.0_mean', 'B14_to_A16_intTarget_3.0_mean', 'B14_to_A16_intTarget_4.0_mean', 'B14_to_A24_intTarget_0.0_mean', 'B14_to_A24_intTarget_1.0_mean', 'B14_to_A24_intTarget_2.0_mean', 'B14_to_A24_intTarget_3.0_mean', 'B14_to_A24_intTarget_4.0_mean', 'B14_to_A26_intTarget_0.0_mean', 'B14_to_A26_intTarget_1.0_mean', 'B14_to_A26_intTarget_2.0_mean', 'B14_to_A26_intTarget_3.0_mean', 'B14_to_A26_intTarget_4.0_mean', 'B14_to_B1_intTarget_0.0_mean', 'B14_to_B1_intTarget_1.0_mean', 'B14_to_B1_intTarget_2.0_mean', 'B14_to_B1_intTarget_3.0_mean', 'B14_to_B1_intTarget_4.0_mean', 'B14_to_B5_intTarget_0.0_mean', 'B14_to_B5_intTarget_1.0_mean', 'B14_to_B5_intTarget_2.0_mean', 'B14_to_B5_intTarget_3.0_mean', 'B14_to_B5_intTarget_4.0_mean', 'B14_to_B6_intTarget_0.0_mean', 'B14_to_B6_intTarget_1.0_mean', 'B14_to_B6_intTarget_2.0_mean', 'B14_to_B6_intTarget_3.0_mean', 'B14_to_B6_intTarget_4.0_mean', 'B14_to_B7_intTarget_0.0_mean', 'B14_to_B7_intTarget_1.0_mean', 'B14_to_B7_intTarget_2.0_mean', 'B14_to_B7_intTarget_3.0_mean', 'B14_to_B7_intTarget_4.0_mean', 'B14_to_B8_intTarget_0.0_mean', 'B14_to_B8_intTarget_1.0_mean', 'B14_to_B8_intTarget_2.0_mean', 'B14_to_B8_intTarget_3.0_mean', 'B14_to_B8_intTarget_4.0_mean', 'B14_to_B14_intTarget_0.0_mean', 'B14_to_B14_intTarget_1.0_mean', 'B14_to_B14_intTarget_2.0_mean', 'B14_to_B14_intTarget_3.0_mean', 'B14_to_B14_intTarget_4.0_mean', 'B14_to_3_intTarget_0.0_mean', 'B14_to_3_intTarget_1.0_mean', 'B14_to_3_intTarget_2.0_mean', 'B14_to_3_intTarget_3.0_mean', 'B14_to_3_intTarget_4.0_mean', 'B14_to_4_intTarget_0.0_mean', 'B14_to_4_intTarget_1.0_mean', 'B14_to_4_intTarget_2.0_mean', 'B14_to_4_intTarget_3.0_mean', 'B14_to_4_intTarget_4.0_mean', 'B14_to_5_intTarget_0.0_mean', 'B14_to_5_intTarget_1.0_mean', 'B14_to_5_intTarget_2.0_mean', 'B14_to_5_intTarget_3.0_mean', 'B14_to_5_intTarget_4.0_mean', 'B14_to_6_intTarget_0.0_mean', 'B14_to_6_intTarget_1.0_mean', 'B14_to_6_intTarget_2.0_mean', 'B14_to_6_intTarget_3.0_mean', 'B14_to_6_intTarget_4.0_mean']
 X_train = train[best_features].values
 X_test = test[best_features].values
 # one hot
@@ -208,66 +262,7 @@ for f in categorical_columns:
     enc.fit(data[f].values.reshape(-1, 1))
     X_train = sparse.hstack((X_train, enc.transform(train[f].values.reshape(-1, 1))), 'csr')
     X_test = sparse.hstack((X_test, enc.transform(test[f].values.reshape(-1, 1))), 'csr')
-print(X_train.shape)
-print(X_test.shape)
 y_train = target.values
-
-
-# def modeling_cross_validation(params, X, y, nr_folds=5):
-#     oof_preds = np.zeros(X.shape[0])
-#     folds = KFold(n_splits=nr_folds, shuffle=False, random_state=4096)
-#
-#     for fold_, (trn_idx, val_idx) in enumerate(folds.split(X, y)):
-#         print("fold n°{}".format(fold_ + 1))
-#         trn_data = lgb.Dataset(X[trn_idx], y[trn_idx])
-#         val_data = lgb.Dataset(X[val_idx], y[val_idx])
-#
-#         num_round = 20000
-#         clf = lgb.train(params, trn_data, num_round, valid_sets=[trn_data, val_data], verbose_eval=1000,
-#                         early_stopping_rounds=100)
-#         oof_preds[val_idx] = clf.predict(X[val_idx], num_iteration=clf.best_iteration)
-#
-#     score = mean_squared_error(oof_preds, target)
-#     return score / 2
-#
-#
-#
-# def featureSelect(init_cols):
-#     params = {'num_leaves': 120,
-#               'min_data_in_leaf': 30,
-#               'objective': 'regression',
-#               'max_depth': -1,
-#               'learning_rate': 0.05,
-#               "min_child_samples": 30,
-#               "boosting": "gbdt",
-#               "feature_fraction": 0.9,
-#               "bagging_freq": 1,
-#               "bagging_fraction": 0.9,
-#               "bagging_seed": 11,
-#               "metric": 'mse',
-#               "lambda_l1": 0.02,
-#               "verbosity": -1}
-#     best_cols = init_cols.copy()
-#     best_score = modeling_cross_validation(params, train[init_cols].values, target.values, nr_folds=5)
-#     print("初始CV score: {:<8.8f}".format(best_score))
-#     for f in init_cols:
-#
-#         best_cols.remove(f)
-#         score = modeling_cross_validation(params, train[best_cols].values, target.values, nr_folds=5)
-#         diff = best_score - score
-#         print('-' * 10)
-#         if diff > 0.0000002:
-#             print("当前移除特征: {}, CV score: {:<8.8f}, 最佳cv score: {:<8.8f}, 有效果,删除！！".format(f, score, best_score))
-#             best_score = score
-#         else:
-#             print("当前移除特征: {}, CV score: {:<8.8f}, 最佳cv score: {:<8.8f}, 没效果,保留！！".format(f, score, best_score))
-#             best_cols.append(f)
-#     print('-' * 10)
-#     print("优化后CV score: {:<8.8f}".format(best_score))
-#
-#     return best_cols
-#
-# best_features = featureSelect(train.columns.tolist())
 
 
 param = {'num_leaves': 120,
